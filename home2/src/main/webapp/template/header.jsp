@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/reset.css">
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/commons.css">
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/test.css">
+<%--     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resource/css/test.css"> --%>
     <style>
         .logo-wrapper {
             width:130px;
