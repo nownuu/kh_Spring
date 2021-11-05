@@ -393,11 +393,53 @@ public class BoardDao {
 		ps.setString(2, boardDto.getBoardWriter());
 		ps.setString(3, boardDto.getBoardTitle());
 		ps.setString(4, boardDto.getBoardContent());
-		ps.setInt(5, boardDto.getBoardSuperNo());//계산된 상위글번호
-		ps.setInt(6, boardDto.getBoardGroupNo());//계산된 그룹번호(원본글 그룹번호와 동일)
+		ps.setInt(5, boardDto.getBoardSuperno());//계산된 상위글번호
+		ps.setInt(6, boardDto.getBoardGroupno());//계산된 그룹번호(원본글 그룹번호와 동일)
 		ps.setInt(7, boardDto.getBoardDepth());//계산된 차수(원본글 차수 + 1)
 		ps.execute();
 		
 		con.close();
 	}
+	
+	//일치 검색 기능
+	public List<BoardDto> searchEquals(String column, String keyword) throws Exception {
+		Connection con = JdbcUtils.connect2();
+		
+		String sql = "select * from board where #1 = ? order by board_no desc";
+		sql = sql.replace("#1", column);//정적 바인딩
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, keyword);
+		ResultSet rs = ps.executeQuery();
+		
+		List<BoardDto> list = new ArrayList<>();
+		while(rs.next()) {
+			BoardDto boardDto = new BoardDto();
+			
+			boardDto.setBoardNo(rs.getInt("board_no"));
+			boardDto.setBoardWriter(rs.getString("board_writer"));
+			boardDto.setBoardTitle(rs.getString("board_title"));
+			boardDto.setBoardContent(rs.getString("board_content"));
+			boardDto.setBoardTime(rs.getDate("board_time"));
+			boardDto.setBoardRead(rs.getInt("board_read"));
+			boardDto.setBoardReply(rs.getInt("board_reply"));
+			boardDto.setBoardSuperNo(rs.getInt("board_superno"));
+			boardDto.setBoardGroupNo(rs.getInt("board_groupno"));
+			boardDto.setBoardDepth(rs.getInt("board_depth"));
+			
+			list.add(boardDto);
+		}
+		
+		con.close();
+		
+		return list;
+	}
 }
+
+
+
+
+
+
+
+
+

@@ -1,26 +1,20 @@
 package home.beans;
 
 public class MemberProfileDto {
-	private int memberFileNo;
+	private int memberProfileNo;
 	private String memberId;
-	private String memberFileUploadname;
-	private String memberFileSavename;
-	private String memberFileType;
-	private long memberFileSize;
+	private String memberProfileSavename;
+	private String memberProfileUploadname;
+	private String memberProfileType;
+	private long memberProfileSize;
 	public MemberProfileDto() {
 		super();
 	}
-	@Override
-	public String toString() {
-		return "MemberFileDto [memberFileNo=" + memberFileNo + ", memberId=" + memberId + ", memberFileUploadname="
-				+ memberFileUploadname + ", memberFileSavename=" + memberFileSavename + ", memberFileType="
-				+ memberFileType + ", memberFileSize=" + memberFileSize + "]";
+	public int getMemberProfileNo() {
+		return memberProfileNo;
 	}
-	public int getMemberFileNo() {
-		return memberFileNo;
-	}
-	public void setMemberFileNo(int memberFileNo) {
-		this.memberFileNo = memberFileNo;
+	public void setMemberProfileNo(int memberProfileNo) {
+		this.memberProfileNo = memberProfileNo;
 	}
 	public String getMemberId() {
 		return memberId;
@@ -28,28 +22,28 @@ public class MemberProfileDto {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
-	public String getMemberFileUploadname() {
-		return memberFileUploadname;
+	public String getMemberProfileSavename() {
+		return memberProfileSavename;
 	}
-	public void setMemberFileUploadname(String memberFileUploadname) {
-		this.memberFileUploadname = memberFileUploadname;
+	public void setMemberProfileSavename(String memberProfileSavename) {
+		this.memberProfileSavename = memberProfileSavename;
 	}
-	public String getMemberFileSavename() {
-		return memberFileSavename;
+	public String getMemberProfileUploadname() {
+		return memberProfileUploadname;
 	}
-	public void setMemberFileSavename(String memberFileSavename) {
-		this.memberFileSavename = memberFileSavename;
+	public void setMemberProfileUploadname(String memberProfileUploadname) {
+		this.memberProfileUploadname = memberProfileUploadname;
 	}
-	public String getMemberFileType() {
-		return memberFileType;
+	public String getMemberProfileType() {
+		return memberProfileType;
 	}
-	public void setMemberFileType(String memberFileType) {
-		this.memberFileType = memberFileType;
+	public void setMemberProfileType(String memberProfileType) {
+		this.memberProfileType = memberProfileType;
 	}
-	public long getMemberFileSize() {
-		return memberFileSize;
+	public long getMemberProfileSize() {
+		return memberProfileSize;
 	}
-	public void setMemberFileSize(long memberFileSize) {
-		this.memberFileSize = memberFileSize;
+	public void setMemberProfileSize(long memberProfileSize) {
+		this.memberProfileSize = memberProfileSize;
 	}
 }
