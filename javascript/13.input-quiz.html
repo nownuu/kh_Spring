@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 구매</title>
+    <link rel="stylesheet" type="text/css" href="commons.css">
+    <script>
+        function calculate(){
+            var size = document.querySelector("#size");
+            var qty = document.querySelector("#qty");
+            var total = document.querySelector("#total");
+            
+            if(qty.value!=""){
+            total.value = parseInt(size.value)*parseInt(qty.value);
+            } else{
+                total.value="0";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+    <div class="container-500 container-center">
+        <div class="row">
+            <p>상품 구매</p>
+            <img src="./image/backimage.jpg" width="200" height="200">
+        </div>
+        <div class="row">
+            <p>사이즈</p>
+            <select id="size">
+                <option value="20000">M(20000원)</option>
+                <option value="25000">L(25000원)</option>
+                <option value="30000">XL(30000원)</option>
+            </select>
+        </div>
+        <div class="row">
+            <p>수량</p>
+            <input type="number" id="qty" value="1">
+        </div>
+        <div class="row">
+            <button onclick="calculate()">결제하기</button>
+        </div>
+        <div class="row">
+            <p>결제 금액</p>
+            <input type="number" id="total">
+        </div>
+    </div>
+</form>
+</body>
+</html>
