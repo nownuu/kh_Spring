@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function increase(){
+            var image = document.querySelector("#sample");
+            var maxSize=400;
+
+            if(image.width < maxSize && image.height < maxSize){
+                image.width += 20;
+                image.height += 20;
+            } else{
+                image.width = maxSize;
+                image.height = maxSize;
+            }
+        }
+        function decrease(){
+            var image = document.querySelector("#sample");
+            var minSize = 60;
+
+            if(image.width > minSize && image.height > minSize){
+                image.width -= 20;
+                image.height -= 20;
+            } else{
+                image.width = minSize;
+                image.height = minSize;
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="./image/lion.gif" width="200" height="200" id="sample">
+    <hr>
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+</body>
+</html>
