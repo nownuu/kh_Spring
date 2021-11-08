@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 색상 바꾸기</title>
+    <script>
+        function red(){
+            var ref = document.querySelector("#target");
+            // ref.style = "color:red"; // 스타일 전체가 덮어쓰기 됨(기존 스타일 제거)
+            ref.style.color = "red" // 스타일 중 color만 덮어쓰기 됨(기존 스타일 유지)
+        }
+        function blue(){
+            var ref = document.querySelector("#target");
+            // ref.style = "color:blue";
+            ref.style.color="blue"
+        }
+        function backgroundYellow(){
+            var ref = document.querySelector("#target");
+            // ref.style = "background-color:yellow";
+            ref.style.backgroundColor="yellow";
+        }
+        function borderBlack(){
+            var ref = document.querySelector("#target");
+            // ref.style = "border:1px solid black";
+            ref.style.border="1px solid black";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="red()">글자 빨강</button>
+    <button onclick="blue()">글자 파랑</button>
+    <button onclick="backgroundYellow()">배경 노랑</button>
+    <button onclick="borderBlack()">테두리 검정</button>
+    <hr>
+    <h1 id="target">과정평가형 자격증 취득반 화이팅!</h1>
+</body>
+</html>
