@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 제어</title>
+    <style>
+        .danger{
+            color: red;
+        }
+        .success{
+            color: #00b894;
+        }
+    </style>
+    <script>
+        // 목표 : 버튼들을 누르면 해당하는 클래스를 추가
+        function success(){
+            var h2 = document.querySelector("h2");
+            // h2.className="success"; //덮어쓰기
+            h2.classList.add("success")
+        }
+        function danger(){
+            var h2 = document.querySelector("h2");
+            // h2.className="danger";
+            h2.classList.add("danger");
+        }
+        function remove(){
+            var h2 = document.querySelector("h2");
+            // h2.className=""; // 전체 선택
+            h2.classList.remove("success", "danger") //선택 삭제
+        }
+    </script>
+</head>
+<body>
+    <button onclick="success()";>success</button>
+    <button onclick="danger()">danger</button>
+    <button onclick="remove()">remove</button>
+    <h2 class="">Javascript class color</h2>
+</body>
+</html>
