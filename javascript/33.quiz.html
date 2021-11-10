@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식 독립형 문제</title>
+    <script>
+        window.addEventListener("load",function(){
+            document.querySelector("input[name=memberNick]").addEventListener("input",function(){
+                //this==닉네임 입력창
+
+                var regex = /^[가-힣]{2,10}$/;
+                var nickName = this.value;
+                var span = this.nextElementSibling;
+
+                if (regex.test(nickName)){
+                span.textContent="올바른 닉네임 형식입니다.";
+                } else{
+                span.textContent="닉네임은 한글 2~10자 이내로 작성하세요."
+                 }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" name="memberNick">
+    <span></span>
+</body>
+</html>
