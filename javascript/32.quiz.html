@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>덧셈 계산기 만들기</title>
+    <script>
+        window.addEventListener("load",function(){
+            document.querySelector("#calcuate-btn").addEventListener("click",function(){
+                // this == #calcuate-btn
+
+                var a = document.querySelector("#a");
+                var b = document.querySelector("#b");
+                var c = document.querySelector("#c");
+
+                c.value = parseFloat(a.value)+parseFloat(b.value);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="number" id="a">
+    +
+    <input type="number" id="b">
+    <button class="calculate-btn">=</button>
+    <input type="number" id="c">
+</body>
+</html>
