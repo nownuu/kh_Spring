@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력창 구현</title>
+    <link rel="stylesheet" type="text/css" href="./css/commons.css">
+    <style>
+        .form-input{
+            outline: none;
+        }
+        .form-input.success{
+            border-color: green;
+        }
+        .form-input.fail{
+            border-color: red;
+        }
+    </style>
+    <script>
+        function idCheck(){
+            var regex = /^[a-z][a-z0-9-_]{7,19}$/;
+            var input =document.querySelector("input[name=memberId");
+            
+            input.classList.remove("success","fail");
+            if(regex.test(input.value)){
+                input.classList.add("success");
+            } else{
+                input.classList.add("fail");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div class="container-400 container-center">
+            <label>아이디 입력</label>
+            <input type="text" name="memberId" class="form-input" autocomplete="off" oninput="idCheck();">
+        </div>
+    </form>
+</body>
+</html>
