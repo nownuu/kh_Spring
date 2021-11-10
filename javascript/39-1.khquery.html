@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 선택자와 값을 전달받아 "color"를 변경하는 함수
+        function color(selector,value){
+            var list = document.querySelectorAll("h1");
+            for(var i=0; i<list.length; i++){
+                list[i].style.color = value;
+            }
+        }
+        function color(selector,value){
+            var list = document.querySelectorAll("h1");
+            for(var i=0; i<list.length; i++){
+                list[i].style.backgroundColor = value;
+            }
+        }
+        window.addEventListener("load", function(){
+            color("h1","red");
+            bgColor("h1","yellow");
+        });
+    </script>
+</head>
+<body>
+    <h1>Hello KHQuery</h1>
+    <h1>Hello KHQuery</h1>
+    <h1>Hello KHQuery</h1>
+    <h1>Hello KHQuery</h1>
+    <h1>Hello KHQuery</h1>
+</body>
+</html>
