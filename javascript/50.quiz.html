@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $(".check-all").on("input",function(){
+                var isChecked = $(this).prop("checked");
+                $("input[type=checkbox]:not(.check-all)").prop("checked", isChecked);
+                $(".check-all").prop("checked", isChecked);
+            });
+        });
+    </script>
+</head>
+<body>
+    <label>
+        <input type="checkbox" class="check-all">
+        <span>전체 선택</span>
+    </label>
+    <hr>
+    <label><input type="checkbox"><span>딸기</span></label>
+    <label><input type="checkbox"><span>사과</span></label>
+    <label><input type="checkbox"><span>바나나</span></label>
+    <label><input type="checkbox"><span>오렌지</span></label>
+    <label><input type="checkbox"><span>망고</span></label>
+    <label><input type="checkbox"><span>파인애플</span></label>
+</body>
+</html>

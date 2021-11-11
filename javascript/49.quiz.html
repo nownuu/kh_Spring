@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $(".unhidden").on("input",function(){
+                //this==checkbox
+                //체크여부 : this.checked 또는 $(this).prop()
+
+                if($(this).prop("checked")){
+                    $("input[name=memberPw]").prop("type","text");
+                } else{
+                    $("input[name=memberPw]").prop("type","password");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="password" name="memberPw" placeholder="비밀번호 입력">
+    <hr>
+    <input type="checkbox" class="unhidden"> 보기
+</body>
+</html>
