@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    <!-- kakao map -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b695efc174b8b60698a9f7265344aa03"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            var container = document.querySelector("#map");
+            var options = { 
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+            };
+
+            // 지도 생성코드
+            var map = new kakao.maps.Map(container, options); 
+        });
+    </script>
+
+</head> 
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:500px;height:400px;"></div>
+
+</body>
+</html>
