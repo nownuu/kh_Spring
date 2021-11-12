@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 문항 작성</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $(".look-btn").click(function(){
+                var input = $("<input>");
+                $(".target").append(input);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" class="srv-input" placeholder="설문조사 문항 작성">
+    <hr>
+    <button class="look-btn">항목 생성</button>
+    <div class="target"></div>
+</body>
+</html>

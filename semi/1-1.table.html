@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>기록 목록</title>
+    <link rel="stylesheet" type="text/css" href="./css/commons.css">
+    <style>
+        .container-header > h4{
+            display: inline;
+        }
+        .container-header{
+            padding: 10px;
+        }
+        /* 기록 작성 버튼 위치? */
+        .container-header .write-btn{
+            
+        }
+
+        /* table header 부분 고정 */
+        .container-table{
+            position: relative;
+            padding-top: 30px;
+            border: 1px solid rgb(85, 77, 77);
+        }
+        /* table header 설정 */
+        .header-bg{
+            background: #fdcccc;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            border-bottom: 1px solid rgb(85, 77, 77);
+        }
+        .table-wrapper{
+            overflow: hidden;
+            overflow-y: auto;
+            height: 100%;
+        }
+        /* table 기본 설정 */
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td{
+            border-bottom: 1px solid #ccc;
+            padding: 5px;
+        }
+        th{
+            padding: 0px;
+        }
+        .th-text{
+            position: absolute;
+            top: 0;
+            width: inherit;
+            line-height: 30px;
+        }
+        th:first-child .th-text{
+            border-left: none;
+        }
+        /* table - li 설정 (왼쪽에 붙는 것 none) */
+        li{
+            list-style: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-600 container-center">
+        <div class="container-header">
+        <h2>내 기록</h1>
+            <h4>2021-11</h4>
+            <button><</button>
+            <button>></button>
+            <h4>오늘</h4>
+            <button class="write-btn">기록 작성</button>
+        </div>
+    <div class="container-table">
+        <div class="header-bg"></div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="20%">
+                            <div class="th-text">날짜</div>
+                        </th>
+                        <th width="30%">
+                            <div class="th-text">카테고리</div>
+                        </th>
+                        <th width="50%">
+                            <div class="th-text">목록</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>
+                            <li>카테고리1</li>
+                            <li>카테고리2</li>
+                        </td>
+                        <td>
+                            <li>제목1</li>
+                            <li>제목2</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                    <tr>
+                        <td>11일</td>
+                        <td>카테고리</td>
+                        <td>제목</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>  
+</body>
+</html>
