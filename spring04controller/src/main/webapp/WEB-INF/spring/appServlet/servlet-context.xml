@@ -18,4 +18,7 @@
 		<bean name="/hi" class="com.kh.spring04.HiController"></bean>
 		<bean name="/dice" class="com.kh.spring04.DiceController"></bean>
 		<bean name="/lotto" class="com.kh.spring04.LottoController"></bean>
+		
+		<!-- root page 설정 -->
+		<bean name="/" class="com.kh.spring04.HomeController"></bean>
 </beans>
