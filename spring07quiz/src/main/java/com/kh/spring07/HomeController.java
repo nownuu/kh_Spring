@@ -7,9 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.kh.spring07.entity.StudentDto;
 
 @Controller
 public class HomeController {
@@ -121,4 +125,43 @@ public class HomeController {
 		model.addAttribute("price", price);
 		return "subway";
 	}
+	
+	// 스프링에서 제공하는 경로변수(Path variable) 방식
+	// http://loacalhost:8080/spring07/subway3/20
+	// ("/subway3/{age}") = {} 필수
+	@RequestMapping("/subway3/{age}")
+	public String subway3(Model model, @PathVariable int age) {
+		int price;
+		if(age >= 65 || age < 8) {
+			price = 0;
+		}
+		else if(age >= 20) {
+			price = 1250;
+		}
+		else if(age >= 14) {
+			price = 720;
+		}
+		else {
+			price = 450;
+		}
+		
+		model.addAttribute("price", price);
+		return "subway";
+	}
+	
+		//객체에 해당하는 정보가 파라미터로 전달될 경우의 처리
+		//ex - http://localhost:8080/spring07/add?name=피카츄&score=90
+		//[1] request를 이용해서 수신하는 방법
+		//[2] @RequestParam을 이용하여 수신하는 방법
+		//		@RequestParam String name, @RequestParam int score
+		//[3] @ModelAttribute 를 이용하여 수신하는 방법
+		//		@ModelAttribute StudentDto studentDto
+		//		받을 수 있는 항목을 다 찾아서 자료형까지 맞춰서 수신
+	
+	@RequestMapping("/add")
+	public String add(@ModelAttribute StudentDto studentDto, Model model) {
+		model.addAttribute("studentDto", studentDto);
+		return "add";
+	}
+	
 }
