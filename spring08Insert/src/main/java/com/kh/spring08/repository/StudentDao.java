@@ -1,32 +1,16 @@
 package com.kh.spring08.repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-
-
-import org.springframework.stereotype.Repository;
-
-
 import com.kh.spring08.entity.StudentDto;
 
-//@Service //대형 기능(ex : 결제)
-@Repository //영속성 항목을 제어하는 컴포넌트
-//@Component //나머지(뭔가를 함)
-public class StudentDao {
+/*
+	스프링의 세번째 특징 : 추상화 구조
+	= 교체가 쉽고 유지보수가 용이하도록 추상화 구조로 생성하는 것을 권장
+	= 안하면 스프링에서 제공하는 기능들을 이부만 사용할 수 있음(ex 프록시 기능 등 사용 불가)
+	= 상위 클래스는 인터페이스로 구현하며, 기능의 형태만 구현(책으로 치면 목차)
+	= 하위 클래스는 클래스로 구현하며, 실제 실행도리 코드를 재정의하여 구현(책으로 치면 본문)
+*/
+public interface StudentDao{
+	void insert(StudentDto studentDto) throws Exception;
 	
-	// 등록 서블릿
-	public void insert(StudentDto studentDto) throws Exception{
-		Class.forName("oracle.jdbc.OracleDriver");
-		Connection con = DriverManager.getConnection
-				("jdbc:oracle:thin:@localhost:1521:xe","kh","kh");
-		
-		String sql = "insert into student values(student_seq.nextval, ?, ?)";
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, studentDto.getName());
-		ps.setInt(2, studentDto.getScore());
-		ps.execute();
-		
-		con.close();
-	}
+	
 }
