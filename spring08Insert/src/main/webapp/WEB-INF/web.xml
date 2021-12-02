@@ -2,7 +2,34 @@
 <web-app version="4.0" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
+	
+	<!--
+		한글 및 유니코드 변환을 위한 필터를 등록
+		- 스프링에서 제공하는 필터를 사용
+		- org.springframework.web.filter.CharacterEncodingFilter
+	 -->
+	 <filter>
+	 	<filter-name>encodingFilter</filter-name>
+	 	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	 	<!--
+	 		부과 설정 
+	 		1. 인코딩 방식을 UTF-8로 설정
+	 		2.  요청 뿐만 아니라 응답까지도 강제로 UTF-8 처리하도록 설정
+	 	-->
+	 	<init-param>
+	 		<param-name>encoding</param-name>
+	 		<param-value>UTF-8</param-value>
+	 	</init-param>
+	 	<init-param>
+	 		<param-name>forceEncoding</param-name>
+	 		<param-value>true</param-value>
+	 	</init-param>
+	 </filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>

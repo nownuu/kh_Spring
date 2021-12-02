@@ -1,5 +1,6 @@
 package com.kh.spring08.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +11,9 @@ import com.kh.spring08.repository.StudentDao;
 
 @Controller
 public class StudentController {
+	
+	@Autowired
+	private StudentDao studentDao;
 	
 // 등록 절차
 // = 반드시 입력페이지와 처리페이지가 존재한다.
@@ -25,12 +29,12 @@ public class StudentController {
 		return "insert";
 	}
 	
+	
 	@PostMapping("/insert") //post 방식
 	public String insert(@ModelAttribute StudentDto studentDto) throws Exception {
 		// 해야할 일 : 데이터를 받아서 처리한 뒤 다른 곳으로 안내
 		// DB 접속 및 등록코드
 		
-		StudentDao studentDao = new StudentDao();
 		studentDao.insert(studentDto);
 		return "insert_success";
 	}
