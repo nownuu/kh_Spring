@@ -14,7 +14,7 @@ public class MemberDaoImpl implements MemberDao{
 	
 	@Override
 	public void join(MemberDto memberDto) {
-		String sql = "insert into member values(?, ?, ?, ?, ?, ?, sysdate, 0, '준회원')";
+		String sql = "insert into member values(?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?, ?, sysdate, 0, '준회원')";
 		Object[] param = {
 				memberDto.getMemberId(),
 				memberDto.getMemberPw(),
@@ -23,6 +23,6 @@ public class MemberDaoImpl implements MemberDao{
 				memberDto.getMemberEmail(),
 				memberDto.getMemberPhone()
 		};
-		jdbcTemplate.update(sql);
+		jdbcTemplate.update(sql, param);
 	}
 }
