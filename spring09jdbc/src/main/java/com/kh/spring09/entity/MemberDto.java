@@ -14,5 +14,5 @@ public class MemberDto {
 	private String memberPhone;
 	private String memberGrade;
 	private Date memberJoin;
-	private int memberPoin;
+	private int memberPoint;
 }

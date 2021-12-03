@@ -1,7 +1,10 @@
 package com.kh.spring09.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,5 +36,15 @@ public class MemberController {
 		// 새로고침을 대비해서 이 기능이 다시 실행되지 않도록 다른 기능으로 강제 이동(redirect)
 		// = redirect:로 시작하는 주소를 반환
 		return "redirect:/"; //root 페이지로 리다이렉트(뷰리졸버 무시)
+	}
+	
+	// 회원 목록
+	@RequestMapping("/list")
+	public String list(Model model) {
+		
+		List<MemberDto> list = memberDao.list();
+		model.addAttribute("list", list);
+		
+		return "member/list";
 	}
 }
