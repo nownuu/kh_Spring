@@ -19,8 +19,8 @@
 	-->
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kh</groupId>
-	<artifactId>바꾸기</artifactId>
-	<name>바꾸기</name>
+	<artifactId>spring12</artifactId>
+	<name>spring12test</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	
@@ -142,16 +142,14 @@
 		</dependency>
 	
 		<!-- 
-			테스트를 위한 의존성 추가
-			- junit : 자바의 독립적인 테스트 프레임워크
-			- spring-test : junit 등을 spring에 맞게 사용할 수 있도록 도와주는 어댑터 의존성
-		 -->
+			테스트를 위한 의존성
+		-->
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>4.13.2</version>
-		    <scope>test</scope>
-		</dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>        
 		
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -167,6 +165,19 @@
 		    <version>21.3.0.0</version>
 		</dependency>
 		
+		<!-- 
+			롬복 : 클래스 코드 자동화 라이브러리
+			- 의존성 추가를 통해 롬복이 제공하는 기능 사용 가능
+			- 이클립스에 추가 설정을 통해 이클립스가 코드가 있다고 믿게 만들어야 한다.
+				1. 해당하는 의존성의 실제 위치를 찾아가야한다.
+		 -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.22</version>
+		    <scope>provided</scope>
+		</dependency>
+		
 		<!-- 스프링 JDBC 의존성 -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -180,7 +191,7 @@
 		    <artifactId>commons-dbcp2</artifactId>
 		    <version>2.9.0</version>
 		</dependency>
-				
+		
 		<!-- 
 			myBatis 의존성
 			- org.mybatis.mybatis : 마이바티스 코어 의존성
@@ -195,20 +206,7 @@
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>
 		    <version>2.0.6</version>
-		</dependency>
-		
-		<!-- 
-			롬복 : 클래스 코드 자동화 라이브러리
-			- 의존성 추가를 통해 롬복이 제공하는 기능 사용 가능
-			- 이클립스에 추가 설정을 통해 이클립스가 코드가 있다고 믿게 만들어야 한다.
-				1. 해당하는 의존성의 실제 위치를 찾아가야 한다.
-		 -->
-		<dependency>
-		    <groupId>org.projectlombok</groupId>
-		    <artifactId>lombok</artifactId>
-		    <version>1.18.22</version>
-		    <scope>provided</scope>
-		</dependency>
+		</dependency>				
 		
 	</dependencies>
 	
