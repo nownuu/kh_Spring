@@ -14,4 +14,15 @@
 	<select id="get" parameterType="String" resultType="MemberDto">
 		select * from member where member_id = #{memberId}
 	</select>
+	<!-- 회원가입 -->
+	<insert id="insert" parameterType="MemberDto">
+		insert into member(
+			member_id, member_pw, member_nick,
+			 member_birth, member_email, member_phone
+		) values(
+			#{memberId}, #{memberPw}, #{memberNick},
+			#{memberBirth}, #{memberEmail}, #{memberPhone},
+			sysdate, 100, '준회원'
+		)
+	</insert>
 </mapper>

@@ -19,8 +19,21 @@ public class MemberController {
 	@Autowired
 	private MemberDao memberDao;
 	
-//	@GetMapping("/join")
-//	@PostMapping("/join")
+	@GetMapping("/join")
+	public String join() {
+		return "member/join";
+	}
+	@PostMapping("/join")
+	public String join(@ModelAttribute MemberDto memberDto) {
+		memberDao.join(memberDto);
+		
+		return "redirect:/member/join_success";
+	}
+	
+	@RequestMapping("/join_success")
+	public String joinSuccess() {
+		return "member/join_success";
+	}
 	
 	@GetMapping("/login")
 	public String login() {
@@ -43,4 +56,11 @@ public class MemberController {
 		}
 	}
 	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("ses");
+		session.removeAttribute("grade");
+		//session.invalidate();
+		return "redirect:/";
+	}
 }

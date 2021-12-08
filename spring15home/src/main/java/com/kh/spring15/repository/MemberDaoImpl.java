@@ -8,14 +8,15 @@ import com.kh.spring15.entity.MemberDto;
 
 @Repository
 public class MemberDaoImpl implements MemberDao{
+
 	@Autowired
 	private SqlSession sqlSession;
-	
+
 	@Override
 	public MemberDto get(String memberId) {
 		return sqlSession.selectOne("member.get", memberId);
 	}
-	
+
 	@Override
 	public MemberDto login(MemberDto memberDto) {
 		MemberDto findDto = sqlSession.selectOne("member.get", memberDto.getMemberId());
@@ -28,4 +29,10 @@ public class MemberDaoImpl implements MemberDao{
 			return null;
 		}
 	}
+
+	@Override
+	public void join(MemberDto memberDto) {
+		sqlSession.insert("member.insert", memberDto);
+	}
+	
 }
