@@ -1,0 +1,4 @@
+/* 테두리용 */
+div, main , nav, header, footer, section, article, aside, span, label, p{
+    border: 1px dotted gray;
+}
