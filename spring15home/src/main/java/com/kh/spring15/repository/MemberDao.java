@@ -8,5 +8,4 @@ public interface MemberDao {
 	MemberDto login(MemberDto memberDto);//비밀번호 검사까지 통과하면 객체를 반환하도록 구현
 	void join(MemberDto memberDto);//가입
 	
-	
 }

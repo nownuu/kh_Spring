@@ -9,11 +9,11 @@
 	</div>
 	<hr>
 	<div class="row center">
-		<a href="login.jsp" class="link-btn-block">로그인하기</a>	
+		<a href="login" class="link-btn-block">로그인하기</a>	
 	</div>
 	<div class="row center"> 
 		<a href="${pageContext.request.contextPath}" class="link-btn-block">메인페이지 보기</a>
 	</div>
 </div>
 
-<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>e>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
@@ -22,10 +22,11 @@
 		<input type="submit" value="로그인" class="form-btn form-inline">
 	</div>
 	
-	<c:if test="${param.error! =null }"></c:if>
+	<c:if test="${param.error != null}">
 	<div class="row center"> 
 		<h4 class="error">로그인 정보가 일치하지 않습니다</h4>
 	</div>
+	</c:if>
 </div>
 
 </form>
